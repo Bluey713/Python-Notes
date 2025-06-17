@@ -83,11 +83,11 @@ dict1 = {"say":"hello", 5:"Big 5", "b":True}
 # print(dict5)
 # print(dict2) #dict2 never changes after its sorted.
 
-stock = {
-            'football': 4,
-            'boardgame': 10,
-            'leggos': 1,
-            'doll': 5 }
+# stock = {
+#             'football': 4,
+#             'boardgame': 10,
+#             'leggos': 1,
+#             'doll': 5 }
 # this was my inital code
 # for item in stock:
 #     if item == merch:
@@ -98,20 +98,26 @@ stock = {
 #     else:
 #         return False
 
-def fillable(stock, merch, n):
-    try:
-        if merch in stock.keys():
-            for item in stock:
-                if item == merch:
-                    if stock[item] >= n:
-                        return True
-                        break
-                    else:
-                        return False
-                else:
-                    continue
-        else:
-            return False
-    except:
-        print("Somethings wrong with the code!")
+# def fillable(stock, merch, n):
+#     try:
+#         if merch in stock.keys():
+#             for item in stock:
+#                 if item == merch:
+#                     if stock[item] >= n:
+#                         return True
+#                         break
+#                     else:
+#                         return False
+#                 else:
+#                     continue
+#         else:
+#             return False
+#     except:
+#         print("Somethings wrong with the code!")
 
+#Testing nested dictionaires for mini project.
+nest_dict = {"Utilities": {"Gas":0, "Electricity": 0, "Water": 0},
+             "Food": {"Groceries": 0, "Fast Food": 0}
+             }
+
+print(nest_dict.keys())
