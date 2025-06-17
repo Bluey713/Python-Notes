@@ -120,4 +120,6 @@ nest_dict = {"Utilities": {"Gas":0, "Electricity": 0, "Water": 0},
              "Food": {"Groceries": 0, "Fast Food": 0}
              }
 
-print(nest_dict.keys())
+print(nest_dict.values())
+nest_dict["Gas"] = nest_dict.get("Gas", 0) + 10
+print(nest_dict.values())
