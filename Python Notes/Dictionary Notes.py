@@ -121,5 +121,7 @@ nest_dict = {"Utilities": {"Gas":0, "Electricity": 0, "Water": 0},
              }
 
 print(nest_dict.values())
-nest_dict["Gas"] = nest_dict.get("Gas", 0) + 10
+nest_dict["Utilities"]["Gas"] = 42  #This is simalar if not the same to accessing nested loops
 print(nest_dict.values())
+print(nest_dict["Utilities"]["Gas"])
+
