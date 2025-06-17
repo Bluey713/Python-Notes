@@ -185,3 +185,5 @@ print(name_reversed_joined)
 print(name1)
 print(name2)
 print(name2_reverse)
+
+print(*name) #testing the * operator on a string
