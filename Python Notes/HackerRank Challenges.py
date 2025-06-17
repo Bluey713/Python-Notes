@@ -16,3 +16,18 @@
 #     s = input()
 #     print(f"{s[::2]} {s[1::2]}")
 
+
+# #Day 7
+# # n = int(input().strip())
+#
+# arr = list(map(int, input().rstrip().split()))
+#
+# # new_string = ""
+# # for i in arr[::-1]:
+# #     new_string += str(i) + " "
+# #
+# # print(new_string.strip())
+#
+# #easier method
+# arr.reverse()
+# print(*arr) #an asterisk unpacks the list to a string
