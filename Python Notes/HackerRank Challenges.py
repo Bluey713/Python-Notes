@@ -48,9 +48,7 @@ for i in range(n):
 while True:
     try:
         name = input("which contact would you like to search: ").lower().strip()
-        if name == "":
-            break
-        elif name in name_phone_pairs.keys():
+        if name in name_phone_pairs.keys():
             print(f"{name}={name_phone_pairs.get[name]}")
         else:
             print("Not found")
