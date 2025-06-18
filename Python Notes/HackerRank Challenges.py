@@ -31,3 +31,28 @@
 # #easier method
 # arr.reverse()
 # print(*arr) #an asterisk unpacks the list to a string
+
+
+#Day 8. create a contact list with a dictionary
+
+#if name not in dictionary print "not found"
+#so use dict.get("name", "Not found")?
+
+n = int(input("enter #: ")) #takes in number of lines to be added
+name_phone_pairs = {}
+
+for i in range(n):
+    contact = list(input("enter contact pair: ").lower().split())
+    name_phone_pairs[contact[0]] = contact[1]
+
+while True:
+    try:
+        name = input("which contact would you like to search: ").lower().strip()
+        if name == "":
+            break
+        elif name in name_phone_pairs.keys():
+            print(f"{name}={name_phone_pairs.get[name]}")
+        else:
+            print("Not found")
+    except EOFError:
+        break
