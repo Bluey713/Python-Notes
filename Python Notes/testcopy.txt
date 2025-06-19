@@ -1,0 +1,5 @@
+Line 1: Hello World!2 and 'Hello World!' should be line 1
+Line 2: Does not include the new line character before or after this stringLine 3: Testing the new line character. 
+ Line 4: does this work as you thought?
+Line 3: testing for the second time. 
+Line 4: does this work as you thought?
