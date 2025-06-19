@@ -38,19 +38,29 @@
 #if name not in dictionary print "not found"
 #so use dict.get("name", "Not found")?
 
-n = int(input("Enter #: ")) #takes in number of lines to be added
-name_phone_pairs = {}
+# n = int(input("Enter #: ")) #takes in number of lines to be added
+# name_phone_pairs = {}
+#
+# for i in range(n):
+#     contact = list(input("Enter contact pair: ").lower().split())
+#     name_phone_pairs[contact[0]] = contact[1]
+#
+# while True:
+#     try:
+#         name = input("Which contact would you like to search: ").lower().strip()
+#         if name in name_phone_pairs.keys():
+#             print(f"{name}={name_phone_pairs.get[name]}")
+#         else:
+#             print("Not found")
+#     except EOFError:
+#         break
 
-for i in range(n):
-    contact = list(input("Enter contact pair: ").lower().split())
-    name_phone_pairs[contact[0]] = contact[1]
+# Day 9 - Recursion
+def factorial(n):
+    # Write your code here
+    n = factorial(n) * factorial(n-1)
+    if n == 0:
+        print(0)
+    print(n)
 
-while True:
-    try:
-        name = input("Which contact would you like to search: ").lower().strip()
-        if name in name_phone_pairs.keys():
-            print(f"{name}={name_phone_pairs.get[name]}")
-        else:
-            print("Not found")
-    except EOFError:
-        break
+factorial(2)
