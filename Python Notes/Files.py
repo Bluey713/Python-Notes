@@ -17,8 +17,13 @@
 # except IOError:
 #     print("Something went wrong!")
 
-#This following takes the text file and prints each line with a for loop
-new_file2 = open("test.txt", "r")
-for each_line in new_file2:
-    print(each_line) #This prints a new line followd by a blank line sine \n is invisible. to remove add end=""
-new_file2.close()  #ALWAYS remember to CLOSE THE FILE!!!!!
+# #This following takes the text file and prints each line with a for loop
+# new_file2 = open("test.txt", "r")
+# for each_line in new_file2:
+#     print(each_line) #This prints a new line followd by a blank line sine \n is invisible. to remove add end=""
+# new_file2.close()  #ALWAYS remember to CLOSE THE FILE!!!!!
+
+#opening and reading a file using the "with" statement. This opens and closes the files even if exceptions are thrown
+with open("test.txt") as new_file3: #"as" assigns the variable to new_file3
+    for each_line in new_file3:
+        print(each_line, end="")    #using the with statment, there is no need to run the close() method
