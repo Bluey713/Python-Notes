@@ -23,7 +23,12 @@
 #     print(each_line) #This prints a new line followd by a blank line sine \n is invisible. to remove add end=""
 # new_file2.close()  #ALWAYS remember to CLOSE THE FILE!!!!!
 
-#opening and reading a file using the "with" statement. This opens and closes the files even if exceptions are thrown
-with open("test.txt") as new_file3: #"as" assigns the variable to new_file3
-    for each_line in new_file3:
-        print(each_line, end="")    #using the with statment, there is no need to run the close() method
+# #opening and reading a file using the "with" statement. This opens and closes the files even if exceptions are thrown
+# with open("test.txt") as new_file3: #"as" assigns the variable to new_file3
+#     for each_line in new_file3:
+#         print(each_line, end="")    #using the with statment, there is no need to run the close() method
+
+#opening multiple files and adding to the file
+with open("test.txt") as in_file, open("testcopy.txt", "w") as out_file:    #opens two files under different variables(file handlers)
+    for each_line in in_file:
+        out_file.write(each_line)   #copies each line in test.txt into testcopy.txt.
