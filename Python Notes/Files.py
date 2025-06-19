@@ -28,7 +28,18 @@
 #     for each_line in new_file3:
 #         print(each_line, end="")    #using the with statment, there is no need to run the close() method
 
-#opening multiple files and adding to the file
-with open("test.txt") as in_file, open("testcopy.txt", "w") as out_file:    #opens two files under different variables(file handlers)
-    for each_line in in_file:
-        out_file.write(each_line)   #copies each line in test.txt into testcopy.txt.
+# #opening multiple files and adding to the file
+# with open("test.txt") as in_file, open("testcopy.txt", "w") as out_file:    #opens two files under different variables(file handlers)
+#     for each_line in in_file:
+#         out_file.write(each_line)   #copies each line in test.txt into testcopy.txt.
+
+# #Testing methods
+# with open("testcopy.txt") as file_handler:
+#     # print(file_handler.read(10))    #prints the first 10 characters
+#     # print(file_handler.read(), end="")  #prints out all charaters or all lines as if running a for loop
+#     #^^ question i have is, what happens if you pass .write(file_handler.read(), end="")? will it make a copy like in the previous block?
+#     # print(file_handler.readline())    #prints the first line
+#     # print(file_handler.readline())    #if two readline are ran consecutively, they add a new blank line in between.
+#     print(file_handler.readline(), end="")    #This gets rid of the blank line
+#     print(file_handler.readline())
+#     # print(file_handler.readlines())   #prints all lines as a list. each element is a line
