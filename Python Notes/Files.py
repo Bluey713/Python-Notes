@@ -46,8 +46,7 @@
 
 #program to take in a text file, read it and have each word reversed.
 
-string_list = []
-reversed_list = []
+
 # test = ("This is line 1"
 #         "\nThis is line 2")
 #
@@ -61,15 +60,19 @@ reversed_list = []
 # print(reversed_list)
 
 with open("Reverse Text.txt", "w+") as reverse_file:
+    string_list = []
+    reversed_list = []
     reverse_file.write("This is line one"
                        "\nThis is line two")
-
+    reverse_file.seek(0)
     for each_line in reverse_file:
         string_list += each_line.strip().split()
+    print(string_list)
+    # for each_word in string_list:
 
-    for each_word in string_list:
-        reversed_list = " ".join(string_list[::-1])
-
+    reversed_list = " ".join(string_list[::-1])
+    print(reversed_list)
+    reverse_file.seek(0)
     reverse_file.writelines(reversed_list)
 
 
