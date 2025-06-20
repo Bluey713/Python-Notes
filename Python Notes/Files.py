@@ -59,23 +59,25 @@
 #     reversed_list = " ".join(string_list[::-1])
 # print(reversed_list)
 
-with open("Reverse Text.txt", "w+") as reverse_file:
-    reversed_list = []
-    joined_list = []
-    reverse_file.write("This is line one"
-                       "\nThis is line two")
-    reverse_file.seek(0)
-    for each_line in reverse_file:
-        string_list = each_line.strip().split()
-        for each_word in string_list:
-            reversed_list.append(each_word[::-1])
-    # print(string_list)
-    # # for each_word in string_list:
-    #
-    joined_list = " ".join(reversed_list)
-    print(joined_list)
-    reverse_file.seek(0)
-    reverse_file.writelines(joined_list)
+# with open("Reverse Text.txt", "w+") as reverse_file:
+#     reversed_list = []
+#     joined_list = []
+#     reverse_file.write("This is line one"
+#                        "\nThis is line two")
+#     reverse_file.seek(0)
+#     for each_line in reverse_file:
+#         string_list = each_line.strip().split()
+#         for each_word in string_list:
+#             reversed_list.append(each_word[::-1])
+#     # print(string_list)
+#     # # for each_word in string_list:
+#     #
+#     joined_list = " ".join(reversed_list)
+#     print(joined_list)
+#     reverse_file.seek(0)
+#     reverse_file.writelines(joined_list)
 
-
-
+#This should count how many words and the times it occurs.
+with open("Word Count.txt", "w+") as word_file:
+    word_file.write("This is line one"
+                           "\nThis is line two")
