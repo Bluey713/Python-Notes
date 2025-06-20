@@ -68,7 +68,7 @@ with open("Reverse Text.txt", "w+") as reverse_file:
         string_list += each_line.strip().split()
 
     for each_word in string_list:
-        reversed_list = " ".join(string_list)
+        reversed_list = " ".join(string_list[::-1])
 
     reverse_file.writelines(reversed_list)
 
