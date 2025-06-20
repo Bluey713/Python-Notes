@@ -28,16 +28,14 @@
 def printer_error(s):
     colors = "abcdefghijklm"
     total_count = 0
-    color_count = 0
+    error_count = 0
 
     for letter in s:
         if letter in colors:
             total_count += 1
-            color_count += 1
         else:
+            error_count += 1
             total_count += 1
             continue
 
-    print(f'printer_error(s) => "{color_count}/{total_count}"')
-
-printer_error("abcdz")
+    return f"{error_count}/{total_count}"
