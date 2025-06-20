@@ -43,3 +43,34 @@
 #     print(file_handler.readline(), end="")    #This gets rid of the blank line
 #     print(file_handler.readline())
 #     # print(file_handler.readlines())   #prints all lines as a list. each element is a line
+
+#program to take in a text file, read it and have each word reversed.
+
+string_list = []
+reversed_list = []
+# test = ("This is line 1"
+#         "\nThis is line 2")
+#
+# for each_word in test:
+#     string_list += each_word
+#
+# print(string_list)
+#
+# for each_word in string_list:
+#     reversed_list = " ".join(string_list[::-1])
+# print(reversed_list)
+
+with open("Reverse Text.txt", "w+") as reverse_file:
+    reverse_file.write("This is line one"
+                       "\nThis is line two")
+
+    for each_line in reverse_file:
+        string_list += each_line.strip().split()
+
+    for each_word in reversed_list:
+        reversed_list = " ".join(string_list)
+
+    reverse_file.writelines(reversed_list)
+
+
+
