@@ -80,7 +80,7 @@
 #This should count how many words and the times it occurs.
 word_count = 0
 duplicate_count = 0
-complete_list = []
+complete_list = dict()  #must be dict. if only () will not work
 with open("Word Count.txt", "w+") as word_file:
     word_file.write("This is line one"
                            "\nThis is line two")
@@ -89,19 +89,20 @@ with open("Word Count.txt", "w+") as word_file:
     #     word_count += 1     #This just sums to two since there's two lines
     for each_line in word_file:
         word_list = each_line.strip().split()
+        word_count += len(word_list)
         for each_word in word_list:
-            word_count += 1
-            complete_list.append(each_word)
+            # word_count += 1     #updating program
+            complete_list[each_word] = complete_list.get(each_word, 0) + 1
             # print(f"The current word is {each_word}")
             # print(f"Is {word_list.count(each_word)} > 1?")  #This only counts the words on line 1
             #This block creates a list of words for each line, then iterates throuugh that list and adds 1 for each word and also adds
             #each word to a new list(this will be the complete list of all words)
-
-    for each_word in complete_list:
-        if complete_list.count(each_word) > 1:
-            duplicate_count += 1
+    #
+    # for each_word in complete_list:
+    #     if complete_list.count(each_word) > 1:
+    #         duplicate_count += 1
 
     print(complete_list)
     print(f"The word count is: {word_count}")
-    print(f"The duplicate count is: {duplicate_count}")
+    # print(f"The duplicate count is: {duplicate_count}")
 #Program works but seems like too much effort. Must be an easier way.
