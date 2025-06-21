@@ -107,8 +107,23 @@
 #     # print(f"The duplicate count is: {duplicate_count}")
 # #Program works but seems like too much effort. Must be an easier way.
 
-#Create a copy of a jpg image
-with open("Starship.jpg", "rb") as existing_image, open("Starship Copy.jpg", "wb") as new_image:
-    for each_line in existing_image:
-        new_image.write(each_line)
-        #This created a copy of the image
+# #Create a copy of a jpg image
+# with open("Starship.jpg", "rb") as existing_image, open("Starship Copy.jpg", "wb") as new_image:
+#     for each_line in existing_image:
+#         new_image.write(each_line)
+#         #This created a copy of the image
+
+#Using the pickle to keep variables as strings on a text sheet.
+import pickle
+
+sample_dict = {"Say": "Hello World!", "name": "James"}
+with open("Test.pickle", "wb") as stored_dict:  #note .pickle extension
+    pickle.dump(sample_dict, stored_dict)       #This dumps the data in sample_dict to the file
+
+with open("Test.pickle", "rb") as stored_dict:  #Opens in read byte mode
+    updated_dict = pickle.load(stored_dict)     #stores sample_dict in new  variable
+    print(updated_dict)
+    print(type(updated_dict))
+
+updated_dict["Say"] = "Good Bye!"               #Me testing that the new var works and updates as a dictionary
+print(updated_dict)
