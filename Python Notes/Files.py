@@ -89,7 +89,7 @@ with open("Word Count.txt", "w+") as word_file:
     #     word_count += 1     #This just sums to two since there's two lines
     for each_line in word_file:
         word_list = each_line.strip().split()
-        word_count += len(word_list)
+        word_count += len(word_list)    #I guess a getter method instead of adding 1?
         for each_word in word_list:
             # word_count += 1     #updating program
             complete_list[each_word] = complete_list.get(each_word, 0) + 1
