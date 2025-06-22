@@ -113,17 +113,34 @@
 #         new_image.write(each_line)
 #         #This created a copy of the image
 
-#Using the pickle to keep variables as strings on a text sheet.
-import pickle
+# #Using the pickle to keep variables as strings on a text sheet.
+# import pickle
+#
+# sample_dict = {"Say": "Hello World!", "name": "James"}
+# with open("Test.pickle", "wb") as stored_dict:  #note .pickle extension
+#     pickle.dump(sample_dict, stored_dict)       #This dumps the data in sample_dict to the file
+#
+# with open("Test.pickle", "rb") as stored_dict:  #Opens in read byte mode
+#     updated_dict = pickle.load(stored_dict)     #stores sample_dict in new  variable
+#     print(updated_dict)
+#     print(type(updated_dict))
+#
+# updated_dict["Say"] = "Good Bye!"               #Me testing that the new var works and updates as a dictionary
+# print(updated_dict)
 
-sample_dict = {"Say": "Hello World!", "name": "James"}
-with open("Test.pickle", "wb") as stored_dict:  #note .pickle extension
-    pickle.dump(sample_dict, stored_dict)       #This dumps the data in sample_dict to the file
+#Reading and writing to csv files
+import csv
+#
+# with open("biostats.csv", newline="") as csvfile:
+#     csv_reader = csv.reader(csvfile)
+#
+#     for row in csv_reader:  #csv are read by rows like text files are read by lines
+#         print(row)  #if you print this, it prints each row as a list
+#         print(" ".join(row))    #This prints everything without the list brackets []
 
-with open("Test.pickle", "rb") as stored_dict:  #Opens in read byte mode
-    updated_dict = pickle.load(stored_dict)     #stores sample_dict in new  variable
-    print(updated_dict)
-    print(type(updated_dict))
+with open("employees.csv", newline="") as csvfile:
+    csvreader = csv.reader(csvfile)
 
-updated_dict["Say"] = "Good Bye!"               #Me testing that the new var works and updates as a dictionary
-print(updated_dict)
+    for row in csvreader:
+        if row[0] == "Jerry":   #checks to see if the first item in each row is "jerry"
+            print(" | ".join(row))   #remember without the join mehtod, it just prints a list which isnt too bad here
