@@ -138,9 +138,21 @@ import csv
 #         print(row)  #if you print this, it prints each row as a list
 #         print(" ".join(row))    #This prints everything without the list brackets []
 
-with open("employees.csv", newline="") as csvfile:
-    csvreader = csv.reader(csvfile)
+# with open("employees.csv", newline="") as csvfile:
+#     csvreader = csv.reader(csvfile)
+#
+#     for row in csvreader:
+#         if row[0] == "Jerry":   #checks to see if the first item in each row is "jerry"
+#             print(" | ".join(row))   #remember without the join mehtod, it just prints a list which isnt too bad here
 
-    for row in csvreader:
-        if row[0] == "Jerry":   #checks to see if the first item in each row is "jerry"
-            print(" | ".join(row))   #remember without the join mehtod, it just prints a list which isnt too bad here
+#Writing data to a csv file
+csv_header = ["Category", "Winner", "Film", "Year"]
+new_row = [["Best Picture", "Doug Mitchell and George Miller", "Mad Mad: Fury Road", "2015"],
+           ["Visual Effects", "Richard Stammers", "X-Men: Days of Future Past", "2014"]]
+
+with open("Oscars.csv","w", newline='') as csvfile:
+    csv_writer = csv.writer(csvfile)    #you need to set the writer object to a variable
+    #csv_writer is now the object where you can write whatever you want.
+    #what im noticing so far is then it will wrtie a row and then move to the next row so i assume there should be a seek method as well
+    csv_writer.writerow(csv_header)     #writes the head to the file
+    csv_writer.writerows(new_row)       #writes each new row included in the var.
