@@ -44,10 +44,8 @@
 #numbers will be a string of space separated numbers
 nums = "5 6 9 3 4 6"
 
-
 def high_and_low(numbers):
     num_list = [int(x) for x in numbers.split()]
     return f"{max(num_list)} {min(num_list)}"
-
 
 high_and_low(nums)
