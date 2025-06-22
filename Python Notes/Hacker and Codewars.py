@@ -43,17 +43,11 @@
 #return the highes and lowest number
 #numbers will be a string of space separated numbers
 nums = "5 6 9 3 4 6"
-nums_list = []
-nums_list_int = []
+
 
 def high_and_low(numbers):
-    num_list = numbers.split()
-    nums_list_int = []
-    for num in num_list:
-        nums_list_int.append(int(num))
-
-    nums_list_int.sort()
-    return f"{nums_list_int[len(nums_list_int)-1]} {nums_list_int[0]}"
+    num_list = list(map(int, numbers.split()))
+    return f"{max(num_list)} {min(num_list)}"
 
 
 high_and_low(nums)
