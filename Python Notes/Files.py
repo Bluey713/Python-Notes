@@ -145,14 +145,31 @@ import csv
 #         if row[0] == "Jerry":   #checks to see if the first item in each row is "jerry"
 #             print(" | ".join(row))   #remember without the join mehtod, it just prints a list which isnt too bad here
 
-#Writing data to a csv file
-csv_header = ["Category", "Winner", "Film", "Year"]
-new_row = [["Best Picture", "Doug Mitchell and George Miller", "Mad Mad: Fury Road", "2015"],
-           ["Visual Effects", "Richard Stammers", "X-Men: Days of Future Past", "2014"]]
+# #Writing data to a csv file
+# csv_header = ["Category", "Winner", "Film", "Year"]
+# new_row = [["Best Picture", "Doug Mitchell and George Miller", "Mad Mad: Fury Road", "2015"],
+#            ["Visual Effects", "Richard Stammers", "X-Men: Days of Future Past", "2014"]]
+#
+# with open("Oscars.csv","w", newline='') as csvfile:
+#     csv_writer = csv.writer(csvfile)    #you need to set the writer object to a variable
+#     #csv_writer is now the object where you can write whatever you want.
+#     #what im noticing so far is then it will wrtie a row and then move to the next row so i assume there should be a seek method as well
+#     csv_writer.writerow(csv_header)     #writes the head to the file
+#     csv_writer.writerows(new_row)       #writes each new row included in the var.
 
-with open("Oscars.csv","w", newline='') as csvfile:
-    csv_writer = csv.writer(csvfile)    #you need to set the writer object to a variable
-    #csv_writer is now the object where you can write whatever you want.
-    #what im noticing so far is then it will wrtie a row and then move to the next row so i assume there should be a seek method as well
-    csv_writer.writerow(csv_header)     #writes the head to the file
-    csv_writer.writerows(new_row)       #writes each new row included in the var.
+# #Using the DictReader
+# with open("pokemon.csv", newline='') as csvfile:
+#     reader = csv.DictReader(csvfile)
+#     for row in reader:
+#         print(row)  #Prints a dictionary for pokemon and type
+#         # print(f"{row['Pokemon']}, {row['Type']}")   #how do you know the list is going to print pokemon then type?
+#         #          prints pokemon, prints type
+
+#Using DictWriter
+with open("names.csv", "w", newline='') as csvfile:
+    names = ["First Name", "Last Name", "Age", "Email"]
+    writer = csv.DictWriter(csvfile, fieldnames=names)
+    writer.writeheader()    #This writes the fieldnames passed above. So the name list is taken as column 1 and 2
+    writer.writerow({"First Name": "Baked", "Last Name": "Beans", "Age": 20})  #works like a dictionary where the fieldnames must match. if "first name" will throw error
+    writer.writerow({"First Name": "Ken", "Last Name": "Beans", "Email": "Beans@gmail.com"})    #If age not given, it shows up as blank but email shows up
+
