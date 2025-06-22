@@ -24,18 +24,36 @@
 #
 # alphabet_war("pqd")
 
-# printer errors
-def printer_error(s):
-    colors = "abcdefghijklm"
-    total_count = 0
-    error_count = 0
+# # printer errors
+# def printer_error(s):
+#     colors = "abcdefghijklm"
+#     total_count = 0
+#     error_count = 0
+#
+#     for letter in s:
+#         if letter in colors:
+#             total_count += 1
+#         else:
+#             error_count += 1
+#             total_count += 1
+#             continue
+#
+#     return f"{error_count}/{total_count}"
 
-    for letter in s:
-        if letter in colors:
-            total_count += 1
-        else:
-            error_count += 1
-            total_count += 1
-            continue
+#return the highes and lowest number
+#numbers will be a string of space separated numbers
+nums = "5 6 9 3 4 6"
+nums_list = []
+nums_list_int = []
 
-    return f"{error_count}/{total_count}"
+def high_and_low(numbers):
+    num_list = numbers.split()
+    nums_list_int = []
+    for num in num_list:
+        nums_list_int.append(int(num))
+
+    nums_list_int.sort()
+    return f"{nums_list_int[len(nums_list_int)-1]} {nums_list_int[0]}"
+
+
+high_and_low(nums)
