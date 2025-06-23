@@ -71,10 +71,10 @@
 
 
 #Trying to create a program that takes a sentence and return the total words and number of repeated words
-sent = "This sentence contains five words"
-repeated_words = "This has eight words and two repeated words"
-word_count = 0
-repeated_count = 0
+# sent = "This sentence contains five words"
+# repeated_words = "This has eight words and two repeated words"
+# word_count = 0
+# repeated_count = 0
 
 # list_1 = list(sent.split())
 # print(list_1)
@@ -83,10 +83,10 @@ repeated_count = 0
 # print(word_count)
 
 
-list_2 = list(repeated_words.lower().split())
-set_1 = set(list_2)
-print(set_1)
-print(list_2)
+# list_2 = list(repeated_words.lower().split())
+# set_1 = set(list_2)
+# print(set_1)
+# print(list_2)
 # for word in list_2:
 #     word_count += 1
 #     for i in range(1, len(list_2)):
@@ -96,3 +96,6 @@ print(list_2)
 #             continue
 #
 # print(f"There are {repeated_count} repeated words and a total of {word_count} words")
+
+list_1 = [1, 2, 3]
+list_1.popitem() #Doesnt exist for lists. only dictionaries

@@ -166,7 +166,7 @@ import csv
 #         #          prints pokemon, prints type
 
 #Using DictWriter
-with open("names.csv", "w", newline='') as csvfile:
+with open("names.csv", "w", newline='') as csvfile: #the newline='' means that each new line appended to the file will be on the next line not and not leave a blank.
     names = ["First Name", "Last Name", "Age", "Email"]
     writer = csv.DictWriter(csvfile, fieldnames=names)
     writer.writeheader()    #This writes the fieldnames passed above. So the name list is taken as column 1 and 2
