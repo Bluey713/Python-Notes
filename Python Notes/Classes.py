@@ -35,15 +35,35 @@
 #     nokia.send_message()
 #
 # main()
+# import math
+#
+# class ArcLength():
+#     # def __init__(self):     #here were not running additional parameters only creating the placehodler for data attributes
+#     #     self.radius = 0
+#     #     self.angle = 0
+#     def __init__(self, radius, angle):  #This now takes two parameters which will need to be given when the variable is initialized
+#         self.radius = radius            #This makes the self.radius take its value from the argument given when the variable = ClassName
+#         self.angle = angle              #idk if this way is better or the previous method
+#                                         #data attributes should be maintained in the init function and is a good practice to not introduce more after this
+#
+#     def calculate_arc_length(self):
+#         result = 2 * math.pi * self.radius * (self.angle / 360)
+#         print(f"Angle is {self.angle}")
+#         print(f"Radius is {self.radius}")
+#         print(f"Length of an Arc is {result}")
+#
+# def main(): #Created a function to run it all in one go like the previous example.
+#     al = ArcLength(9, 75)
+#     al.calculate_arc_length()
+#
+# main()
+
 import math
 
 class ArcLength():
-    # def __init__(self):     #here were not running additional parameters only creating the placehodler for data attributes
-    #     self.radius = 0
-    #     self.angle = 0
-    def __init__(self, radius, angle):  #This now takes two parameters which will need to be given when the variable is initialized
-        self.radius = radius            #This makes the self.radius take its value from the argument given when the variable = ClassName
-        self.angle = angle              #idk if this way is better or the previous method
+    def __init__(self):     #here were not running additional parameters only creating the placehodler for data attributes
+        self.radius = 0     #per the book these are initialized when the al = ArcLength is run but is not true since al.radius doesnt print
+        self.angle = 0
 
     def calculate_arc_length(self):
         result = 2 * math.pi * self.radius * (self.angle / 360)
@@ -52,8 +72,6 @@ class ArcLength():
         print(f"Length of an Arc is {result}")
 
 
-def main():
-    al = ArcLength(9, 75)
-    al.calculate_arc_length()
-
-main()
+al = ArcLength
+# al.radius = 1
+print(al.radius)
