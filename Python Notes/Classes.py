@@ -58,20 +58,43 @@
 #
 # main()
 
-import math
+# import math
+#
+# class ArcLength():
+#     def __init__(self):     #here were not running additional parameters only creating the placehodler for data attributes
+#         self.radius = 0     #per the book these are initialized when the al = ArcLength is run but is not true since al.radius doesnt print
+#         self.angle = 0
+#
+#     def calculate_arc_length(self):
+#         result = 2 * math.pi * self.radius * (self.angle / 360)
+#         print(f"Angle is {self.angle}")
+#         print(f"Radius is {self.radius}")
+#         print(f"Length of an Arc is {result}")
+#
+#
+# al = ArcLength
+# # al.radius = 1
+# print(al.radius)
 
-class ArcLength():
-    def __init__(self):     #here were not running additional parameters only creating the placehodler for data attributes
-        self.radius = 0     #per the book these are initialized when the al = ArcLength is run but is not true since al.radius doesnt print
-        self.angle = 0
+# class Birds():
+#     def __init__(self, type):   #has one paramenter required when
+#         self.type = type
+#
+#     def flying_bird(self):
+#         """Prints if this is a flying bird or not."""
+#         print(f"{self.type} is a flying bird.")
+#
+#     def non_flying_bird(self):
+#         print(f"{self.type} is the national bird of Australia")
+#
+# def main():
+#     vulture = Birds("Griffon Vulture")
+#     crane = Birds("Common Crane")
+#     emu = Birds("Emu")
+#     vulture.flying_bird()
+#     crane.flying_bird()
+#     emu.non_flying_bird()
+#     print(vulture.type) #me testing what it will print. prints the initial argument passed on the class
+#
+# main()
 
-    def calculate_arc_length(self):
-        result = 2 * math.pi * self.radius * (self.angle / 360)
-        print(f"Angle is {self.angle}")
-        print(f"Radius is {self.radius}")
-        print(f"Length of an Arc is {result}")
-
-
-al = ArcLength
-# al.radius = 1
-print(al.radius)
