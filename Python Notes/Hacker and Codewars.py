@@ -50,20 +50,33 @@
 #
 # high_and_low(nums)
 
-def am_I_afraid(day,num):
-    if day == "Monday" and num == 12:
-        return True
-    elif day == "Tuesday" and num >95:
-        return True
-    elif day == "Wednesday" and num == 34:
-        return True
-    elif day == "Thurdsay" and num == 0:
-        return True
-    elif day == "Friday" and (num % 2) == 0:
-        return True
-    elif day == "Saturday" and num == 56:
-        return True
-    elif day == "Sunday" and (num == 666 or num ==-666):
-        return True
-    else:
-        return False
+# def am_I_afraid(day,num):
+#     if day == "Monday" and num == 12:
+#         return True
+#     elif day == "Tuesday" and num >95:
+#         return True
+#     elif day == "Wednesday" and num == 34:
+#         return True
+#     elif day == "Thurdsay" and num == 0:
+#         return True
+#     elif day == "Friday" and (num % 2) == 0:
+#         return True
+#     elif day == "Saturday" and num == 56:
+#         return True
+#     elif day == "Sunday" and (num == 666 or num ==-666):
+#         return True
+#     else:
+#         return False
+
+#takes in an array and an integer. find the occurances of the integer in the array and return a list of the indexes where it occurs.
+def find_all(array, n):
+    count = 0
+    occur_list = []
+    for num in range(len(array)):
+        if array[num] == n:
+            count += 1
+            occur_list.append(num)  #if nothing gets appended, it remains an empty list
+
+    return occur_list
+
+
