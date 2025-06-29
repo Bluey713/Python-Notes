@@ -68,15 +68,18 @@
 #     else:
 #         return False
 
-#takes in an array and an integer. find the occurances of the integer in the array and return a list of the indexes where it occurs.
-def find_all(array, n):
-    count = 0
-    occur_list = []
-    for num in range(len(array)):
-        if array[num] == n:
-            count += 1
-            occur_list.append(num)  #if nothing gets appended, it remains an empty list
+# #takes in an array and an integer. find the occurances of the integer in the array and return a list of the indexes where it occurs.
+# def find_all(array, n):
+#     count = 0
+#     occur_list = []
+#     for num in range(len(array)):
+#         if array[num] == n:
+#             count += 1
+#             occur_list.append(num)  #if nothing gets appended, it remains an empty list
+#
+#     return occur_list
 
-    return occur_list
+#Take in a string and return the string reversed including the spaces.
+
 
 
