@@ -80,6 +80,28 @@
 #     return occur_list
 
 #Take in a string and return the string reversed including the spaces.
+# def reverse_words(text):
+#     list_1 = list(text.split(" "))
+#     print(list_1)
+#     list_2 = []
+#
+#     for each_word in list_1:
+#         print(each_word[::-1])
+#         list_2.append(each_word[::-1])
+#     #
+#     #
+#     # return " ".join(list_2)
+#     print(" ".join(list_2))
+#This was my first attempt
 
+def reverse_words(text):
+    list_1 = list(text.split(" "))
+    list_2 = [x[::-1] for x in list_1]
+    # list_2 = [x[::-1] for x in text.split(" ")] idea from codewars solution
 
+    return " ".join(list_2)
+#This was my final solution. To shorten it i could have done [x[::-1] for x in text.split(" ")]
+
+sample = "This  is  a  sample"
+reverse_words(sample)
 
