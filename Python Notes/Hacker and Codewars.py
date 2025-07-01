@@ -94,14 +94,27 @@
 #     print(" ".join(list_2))
 #This was my first attempt
 
-def reverse_words(text):
-    list_1 = list(text.split(" "))
-    list_2 = [x[::-1] for x in list_1]
-    # list_2 = [x[::-1] for x in text.split(" ")] idea from codewars solution
+# def reverse_words(text):
+#     list_1 = list(text.split(" "))
+#     list_2 = [x[::-1] for x in list_1]
+#     # list_2 = [x[::-1] for x in text.split(" ")] idea from codewars solution
+#
+#     return " ".join(list_2)
+# #This was my final solution. To shorten it i could have done [x[::-1] for x in text.split(" ")]
+#
+# sample = "This  is  a  sample"
+# reverse_words(sample)
 
-    return " ".join(list_2)
-#This was my final solution. To shorten it i could have done [x[::-1] for x in text.split(" ")]
+def case_sensitive(s):
+    new_list = [letter for letter in s if letter.isupper()]
+    if len(new_list) > 0:
+        return [False, new_list]
+    else:
+        return [True, new_list]
 
-sample = "This  is  a  sample"
-reverse_words(sample)
+case_sensitive("codewARs")
+
+
+
+
 
