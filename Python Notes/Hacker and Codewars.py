@@ -105,14 +105,49 @@
 # sample = "This  is  a  sample"
 # reverse_words(sample)
 
-def case_sensitive(s):
-    new_list = [letter for letter in s if letter.isupper()]
-    if len(new_list) > 0:
-        return [False, new_list]
-    else:
-        return [True, new_list]
+# def case_sensitive(s):
+#     new_list = [letter for letter in s if letter.isupper()]
+#     if len(new_list) > 0:
+#         return [False, new_list]
+#     else:
+#         return [True, new_list]
+#
+# case_sensitive("codewARs")
 
-case_sensitive("codewARs")
+# def scoreboard(st):
+#     convert = {
+#         "nil": 0,
+#         "one": 1,
+#         "two": 2,
+#         "three": 3,
+#         "four": 4,
+#         "five": 5,
+#         "six": 6,
+#         "seven": 7,
+#         "eight": 8,
+#         "nine": 9
+#     }
+#     score = [convert[num] for num in st.split() if num in convert]
+#
+#     print(score)
+# st1 = "the score is six five"
+# scoreboard(st1)
+
+from math import ceil
+def sillycase(silly):
+    num = ceil(len(silly)/2)
+    lower_case = [letter.lower() for letter in silly[:num]]
+    upper_case = [letter.upper() for letter in silly[num:]]
+    #refactored code to the above 2 lines from the bottom 5 lines
+    # change_case = ""
+    # for letter in silly[:num]:
+    #     change_case += letter.lower()
+    # for letter in silly[num:]:
+    #     change_case += letter.upper()
+    #return silly[:half].lower() + silly[half:].upper() per CodeWars
+    print("".join(lower_case + upper_case))
+
+sillycase("briian")
 
 
 
