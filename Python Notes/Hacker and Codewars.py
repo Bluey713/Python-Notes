@@ -50,20 +50,106 @@
 #
 # high_and_low(nums)
 
-def am_I_afraid(day,num):
-    if day == "Monday" and num == 12:
-        return True
-    elif day == "Tuesday" and num >95:
-        return True
-    elif day == "Wednesday" and num == 34:
-        return True
-    elif day == "Thurdsay" and num == 0:
-        return True
-    elif day == "Friday" and (num % 2) == 0:
-        return True
-    elif day == "Saturday" and num == 56:
-        return True
-    elif day == "Sunday" and (num == 666 or num ==-666):
-        return True
-    else:
-        return False
+# def am_I_afraid(day,num):
+#     if day == "Monday" and num == 12:
+#         return True
+#     elif day == "Tuesday" and num >95:
+#         return True
+#     elif day == "Wednesday" and num == 34:
+#         return True
+#     elif day == "Thurdsay" and num == 0:
+#         return True
+#     elif day == "Friday" and (num % 2) == 0:
+#         return True
+#     elif day == "Saturday" and num == 56:
+#         return True
+#     elif day == "Sunday" and (num == 666 or num ==-666):
+#         return True
+#     else:
+#         return False
+
+# #takes in an array and an integer. find the occurances of the integer in the array and return a list of the indexes where it occurs.
+# def find_all(array, n):
+#     count = 0
+#     occur_list = []
+#     for num in range(len(array)):
+#         if array[num] == n:
+#             count += 1
+#             occur_list.append(num)  #if nothing gets appended, it remains an empty list
+#
+#     return occur_list
+
+#Take in a string and return the string reversed including the spaces.
+# def reverse_words(text):
+#     list_1 = list(text.split(" "))
+#     print(list_1)
+#     list_2 = []
+#
+#     for each_word in list_1:
+#         print(each_word[::-1])
+#         list_2.append(each_word[::-1])
+#     #
+#     #
+#     # return " ".join(list_2)
+#     print(" ".join(list_2))
+#This was my first attempt
+
+# def reverse_words(text):
+#     list_1 = list(text.split(" "))
+#     list_2 = [x[::-1] for x in list_1]
+#     # list_2 = [x[::-1] for x in text.split(" ")] idea from codewars solution
+#
+#     return " ".join(list_2)
+# #This was my final solution. To shorten it i could have done [x[::-1] for x in text.split(" ")]
+#
+# sample = "This  is  a  sample"
+# reverse_words(sample)
+
+# def case_sensitive(s):
+#     new_list = [letter for letter in s if letter.isupper()]
+#     if len(new_list) > 0:
+#         return [False, new_list]
+#     else:
+#         return [True, new_list]
+#
+# case_sensitive("codewARs")
+
+# def scoreboard(st):
+#     convert = {
+#         "nil": 0,
+#         "one": 1,
+#         "two": 2,
+#         "three": 3,
+#         "four": 4,
+#         "five": 5,
+#         "six": 6,
+#         "seven": 7,
+#         "eight": 8,
+#         "nine": 9
+#     }
+#     score = [convert[num] for num in st.split() if num in convert]
+#
+#     print(score)
+# st1 = "the score is six five"
+# scoreboard(st1)
+
+from math import ceil
+def sillycase(silly):
+    num = ceil(len(silly)/2)
+    lower_case = [letter.lower() for letter in silly[:num]]
+    upper_case = [letter.upper() for letter in silly[num:]]
+    #refactored code to the above 2 lines from the bottom 5 lines
+    # change_case = ""
+    # for letter in silly[:num]:
+    #     change_case += letter.lower()
+    # for letter in silly[num:]:
+    #     change_case += letter.upper()
+    #return silly[:half].lower() + silly[half:].upper() per CodeWars
+    print("".join(lower_case + upper_case))
+
+sillycase("briian")
+
+
+
+
+
