@@ -151,17 +151,48 @@
 #
 # main()
 
-#passing an object as an argument (here singer is the object that was initialized into the Track class)
-class Track:
-    def __init__(self, song, artist):
-        self.song = song
-        self.artist = artist
-        #1 Here we are creating a class that will initialize the object to contain object.song and object.artist
+# #passing an object as an argument (here singer is the object that was initialized into the Track class)
+# class Track:
+#     def __init__(self, song, artist):
+#         self.song = song
+#         self.artist = artist
+#         #1 Here we are creating a class that will initialize the object to contain object.song and object.artist
+#
+# def print_track(vocalist):
+#     print(f"Song is {vocalist.song}")   #2 this function takes in a parameter which later we see will be singer. since vocalist is just a placeholder the real var = singer
+#     print(f"Artist is {vocalist.artist}")
+#
+# singer = Track("Family Ties", "Drake")  #1 We initialize the object "singer" which now has two data attributes, song = family ties, artist = drake
+#
+# print_track(singer) #3 here we just run the functions which prints singer.song and singer.artist since "vocalist" = singer
+# #This works as long as we know the object has these methods(data attributes) but what if we didn't? When would we use this?
+#
+# print(isinstance(singer, Track))
 
-def print_track(vocalist):
-    print(f"Song is {vocalist.song}")   #2 this function takes in a parameter which later we see will be singer. since vocalist is just a placeholder the real var = singer
-    print(f"Artist is {vocalist.artist}")
+class Time:
+    def __init__(self, hours: int, minutes: int, seconds: int) -> None:
+        self.hours = hours
+        self.minutes = minutes
+        self.seconds = seconds
 
-singer = Track("Family Ties", "Drake")  #1 We initialize the object "singer" which now has two data attributes, song = family ties, artist = drake
+    def add_time(self, duration) -> None:   #This needs the duration parameter to access the data attributes of the second object
+        opera_hours = self.hours + duration.hours   #here we access the hours attribute of the second object.
+        opera_minutes = self.minutes + duration.minutes
+        opera_seconds = self.seconds + duration.seconds
 
-print_track(singer) #3 here we just run the functions which prints singer.song and singer.artist since "vocalist" = singer
+        while opera_seconds >= 60:  #Seconds need to by less than 60 seconds or else we need subtract 60 seconds to add a minute to minutes
+            opera_seconds -= 60
+            opera_minutes += 1
+
+        while opera_minutes >= 60:  #same here, minutes need to be less than 60 minutes.
+            opera_minutes -= 60
+            opera_hours += 1
+
+        print(f"The total time is {opera_hours}:{opera_minutes}:{opera_seconds}")
+
+def calc_time():
+    opera_start = Time(10, 30, 30)
+    opera_duration = Time(2, 45, 50)
+    opera_start.add_time(opera_duration)
+
+calc_time()
