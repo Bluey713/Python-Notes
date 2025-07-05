@@ -169,30 +169,41 @@
 #
 # print(isinstance(singer, Track))
 
-class Time:
-    def __init__(self, hours: int, minutes: int, seconds: int) -> None:
-        self.hours = hours
-        self.minutes = minutes
-        self.seconds = seconds
+# class Time:
+#     def __init__(self, hours: int, minutes: int, seconds: int) -> None:
+#         self.hours = hours
+#         self.minutes = minutes
+#         self.seconds = seconds
+#
+#     def add_time(self, duration) -> None:   #This needs the duration parameter to access the data attributes of the second object
+#         opera_hours = self.hours + duration.hours   #here we access the hours attribute of the second object.
+#         opera_minutes = self.minutes + duration.minutes
+#         opera_seconds = self.seconds + duration.seconds
+#
+#         while opera_seconds >= 60:  #Seconds need to by less than 60 seconds or else we need subtract 60 seconds to add a minute to minutes
+#             opera_seconds -= 60
+#             opera_minutes += 1
+#
+#         while opera_minutes >= 60:  #same here, minutes need to be less than 60 minutes.
+#             opera_minutes -= 60
+#             opera_hours += 1
+#
+#         print(f"The total time is {opera_hours}:{opera_minutes}:{opera_seconds}")
+#
+# def calc_time():
+#     opera_start = Time(10, 30, 30)
+#     opera_duration = Time(2, 45, 50)
+#     opera_start.add_time(opera_duration)
+#
+# calc_time()
 
-    def add_time(self, duration) -> None:   #This needs the duration parameter to access the data attributes of the second object
-        opera_hours = self.hours + duration.hours   #here we access the hours attribute of the second object.
-        opera_minutes = self.minutes + duration.minutes
-        opera_seconds = self.seconds + duration.seconds
+#Program to show class variable and instance variables.
+class Dog:
+    kind = "canine"     #This is a class variable or shared variable.
+    def __init__(self, name: str):
+        self.dog_name = name    #this is an instance variable or a unique variable to each object instantiated with this class.
 
-        while opera_seconds >= 60:  #Seconds need to by less than 60 seconds or else we need subtract 60 seconds to add a minute to minutes
-            opera_seconds -= 60
-            opera_minutes += 1
-
-        while opera_minutes >= 60:  #same here, minutes need to be less than 60 minutes.
-            opera_minutes -= 60
-            opera_hours += 1
-
-        print(f"The total time is {opera_hours}:{opera_minutes}:{opera_seconds}")
-
-def calc_time():
-    opera_start = Time(10, 30, 30)
-    opera_duration = Time(2, 45, 50)
-    opera_start.add_time(opera_duration)
-
-calc_time()
+d = Dog("Fido")
+e = Dog("Buddy")
+print(f"Value for shared variable or class variable 'kind' is {d.kind}")
+print(f"Value for unique variable or instance variable 'dog_name' is {d.dog_name}")
