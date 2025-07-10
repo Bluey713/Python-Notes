@@ -197,13 +197,54 @@
 #
 # calc_time()
 
-#Program to show class variable and instance variables.
-class Dog:
-    kind = "canine"     #This is a class variable or shared variable.
-    def __init__(self, name: str):
-        self.dog_name = name    #this is an instance variable or a unique variable to each object instantiated with this class.
+# #Program to show class variable and instance variables.
+# class Dog:
+#     kind = "canine"     #This is a class variable or shared variable.
+#     def __init__(self, name: str):
+#         self.dog_name = name    #this is an instance variable or a unique variable to each object instantiated with this class.
+#
+# d = Dog("Fido")
+# e = Dog("Buddy")
+# print(f"Value for shared variable or class variable 'kind' is {d.kind}")
+# print(f"Value for unique variable or instance variable 'dog_name' is {d.dog_name}")
 
-d = Dog("Fido")
-e = Dog("Buddy")
-print(f"Value for shared variable or class variable 'kind' is {d.kind}")
-print(f"Value for unique variable or instance variable 'dog_name' is {d.dog_name}")
+# # Program to demonstrate the difference between abstraction and encapsulation.
+# class foo:
+#     def __init__(self, a, b):
+#         self.a = a
+#         self.b = b
+#
+#     def add(self):
+#         return self.a + self.b
+# #The class is the encapsulation and the method is the abstraction.
+# foo_object = foo(3, 4)
+# foo_object.add()
+
+# #Inheritance
+# class Test(object): #all classes are derived or "subclasses" of the class "object"
+#     pass
+# class Test1: #This is the same as above since it inherits properties of the class "object" but this is shorthand.
+#     pass
+
+#Demo of base and derived class relationship
+class FootBall:
+    def __init__(self, country: str, division: str, no_of_times: int):
+        self.country = country
+        self.division = division
+        self.no_of_times = no_of_times
+
+    def fifa(self):
+        print(f"{self.country} national football team is placed in '{self.no_of_times}' FIFA division")
+
+class WorldChampions(FootBall): #This now inherits everything "Football". That's why we dont run the init def.
+    def world_championship(self):
+        print(f"{self.country} national football team is {self.no_of_times} times world champions")
+
+def main():
+    germany = WorldChampions("Germany", "UEFA", 4)
+    germany.fifa()  #This is a method in the "FootBall" class but the worldChamp class inherited this as well
+    germany.world_championship()
+
+main()
+
+
