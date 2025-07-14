@@ -272,36 +272,69 @@
 #
 # main()
 
-# Program to demonstrate the overriding of the base class method
+# # Program to demonstrate the overriding of the base class method
+#
+# class Book:
+#     def __init__(self, author, title):
+#         self.author = author
+#         self.title = title
+#
+#     def book_info(self):
+#         print(f"{self.title} is authored by {self.author}")
+#
+# class Fiction(Book):
+#     def __init__(self, author, title, publisher):
+#         super().__init__(author, title)
+#         self.publisher = publisher
+#
+#     def book_info(self):    #1 Here we are overriding the base class method with an updated method to include our 3rd var.
+#         print(f"{self.title} is authored by {self.author} and published by {self.publisher}")
+#
+#     def invoke_base_class_method(self):
+#         super().book_info() #2 This invokes our base class method by using the super function.
+#
+# def main():
+#     print("Derived Class")
+#     silva_book = Fiction("Daniel Silva", "Prince of Fire", "Berkley")   #3 We used the class that inherits from book.
+#     silva_book.book_info()  #4 This is using the updated method
+#     silva_book.invoke_base_class_method()
+#     print("-"*30)
+#     print("Base Class")
+#     reacher_book = Book("Lee Child", "One Shot")    #5 We used our parent class with the parent methods
+#     reacher_book.book_info()
+#
+# main()
 
-class Book:
-    def __init__(self, author, title):
-        self.author = author
-        self.title = title
+# Multiple inheritances
+class Poissonier:
+    def __init__(self, poissonier_role):
+        self.poissonier_role = poissonier_role
+    def display_poissonier_chef_info(self):
+        print(f"Chef is mainly involved in preparing {self.poissonier_role}")
 
-    def book_info(self):
-        print(f"{self.title} is authored by {self.author}")
+class Entremetier:
+    def __init__(self, entremetier_role):
+        self.entremetier_role = entremetier_role
+    def display_entremetier_chef_info(self):
+        print(f"Chef is mainly involved in preparing {self.entremetier_role}")
 
-class Fiction(Book):
-    def __init__(self, author, title, publisher):
-        super().__init__(author, title)
-        self.publisher = publisher
+class Cook(Poissonier, Entremetier):    #1 This is a dervied class from P and E, there for can use the inits on both
+    def __init__(self, poissonier_role, entremetier_role):
+        Poissonier.__init__(self, poissonier_role)  #2 Tried using the super functions but doesnt work. need to look into this further.
+        Entremetier.__init__(self, entremetier_role)
 
-    def book_info(self):    #1 Here we are overriding the base class method with an updated method to include our 3rd var.
-        print(f"{self.title} is authored by {self.author} and published by {self.publisher}")
-
-    def invoke_base_class_method(self):
-        super().book_info() #2 This invokes our base class method by using the super function.
+    def invoke_base_class_methods(self):
+        Poissonier.display_poissonier_chef_info(self)
+        Entremetier.display_entremetier_chef_info(self)
 
 def main():
-    print("Derived Class")
-    silva_book = Fiction("Daniel Silva", "Prince of Fire", "Berkley")   #3 We used the class that inherits from book.
-    silva_book.book_info()  #4 This is using the updated method
-    silva_book.invoke_base_class_method()
-    print("-"*30)
-    print("Base Class")
-    reacher_book = Book("Lee Child", "One Shot")    #5 We used our parent class with the parent methods
-    reacher_book.book_info()
+    print(f"Is cook a derived calss of Possonier Base Class? {issubclass(Cook, (Entremetier, Poissonier))}")
+    chef = Cook("Seafood", "Vegetables")
+    chef.invoke_base_class_methods()
+
+
 
 main()
+
+
 
