@@ -226,25 +226,82 @@
 # class Test1: #This is the same as above since it inherits properties of the class "object" but this is shorthand.
 #     pass
 
-#Demo of base and derived class relationship
-class FootBall:
-    def __init__(self, country: str, division: str, no_of_times: int):
-        self.country = country
-        self.division = division
-        self.no_of_times = no_of_times
+# #Demo of base and derived class relationship
+# class FootBall:
+#     def __init__(self, country: str, division: str, no_of_times: int):
+#         self.country = country
+#         self.division = division
+#         self.no_of_times = no_of_times
+#
+#     def fifa(self):
+#         print(f"{self.country} national football team is placed in '{self.no_of_times}' FIFA division")
+#
+# class WorldChampions(FootBall): #This now inherits everything "Football". That's why we dont run the init def.
+#     def world_championship(self):
+#         print(f"{self.country} national football team is {self.no_of_times} times world champions")
+#
+# def main():
+#     germany = WorldChampions("Germany", "UEFA", 4)
+#     germany.fifa()  #This is a method in the "FootBall" class but the worldChamp class inherited this as well
+#     germany.world_championship()
+#
+# main()
 
-    def fifa(self):
-        print(f"{self.country} national football team is placed in '{self.no_of_times}' FIFA division")
+# # Program to demonstrate the use of super() function
+# class Country:
+#     def __init__(self, country_name):
+#         self.country_name = country_name
+#         # self.continent = continent    #I added this afterward to test if the super function is needed if we have the two variables in here.
+#
+#
+#     def country_details(self):
+#         print(f"Happiest Country in the world is {self.country_name}")
+#
+# class HappiestCountry(Country): #1 Here the new class inherits everything from the "Country" class
+#     def __init__(self, country_name, continent):    #2 Here we have to initialize all variable since the "Country" class only has one.
+#         super().__init__(country_name) #3 here we run the super to get the first variable even though its already initialized with the inheritance since we need the second var.
+#         self.continent = continent  #the super function "overrides" the base class methods
+#
+#     def happy_country_details(self):
+#         print(f"Happiest Country in the world is {self.country_name} and is in {self.continent}")
+#
+#
+# def main():
+#     finland = HappiestCountry("Finland", "Europe")
+#     finland.happy_country_details()
+#
+# main()
 
-class WorldChampions(FootBall): #This now inherits everything "Football". That's why we dont run the init def.
-    def world_championship(self):
-        print(f"{self.country} national football team is {self.no_of_times} times world champions")
+# Program to demonstrate the overriding of the base class method
+
+class Book:
+    def __init__(self, author, title):
+        self.author = author
+        self.title = title
+
+    def book_info(self):
+        print(f"{self.title} is authored by {self.author}")
+
+class Fiction(Book):
+    def __init__(self, author, title, publisher):
+        super().__init__(author, title)
+        self.publisher = publisher
+
+    def book_info(self):    #1 Here we are overriding the base class method with an updated method to include our 3rd var.
+        print(f"{self.title} is authored by {self.author} and published by {self.publisher}")
+
+    def invoke_base_class_method(self):
+        super().book_info() #2 This invokes our base class method by using the super function.
 
 def main():
-    germany = WorldChampions("Germany", "UEFA", 4)
-    germany.fifa()  #This is a method in the "FootBall" class but the worldChamp class inherited this as well
-    germany.world_championship()
+    print("Derived Class")
+    silva_book = Fiction("Daniel Silva", "Prince of Fire", "Berkley")   #3 We used the class that inherits from book.
+    silva_book.book_info()  #4 This is using the updated method
+    silva_book.invoke_base_class_method()
+    print("-"*30)
+    print("Base Class")
+    reacher_book = Book("Lee Child", "One Shot")    #5 We used our parent class with the parent methods
+    reacher_book.book_info()
 
 main()
-
 
